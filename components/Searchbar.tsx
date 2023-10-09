@@ -1,5 +1,4 @@
 'use client';
-
 import { FormEvent, useState } from 'react';
 
 const isValidAmazonProductURL = (url: string) => {
@@ -53,7 +52,11 @@ const Searchbar = () => {
         className='searchbar-input'
       />
 
-      <button type='submit' className='searchbar-btn'>
+      <button
+        type='submit'
+        className='searchbar-btn'
+        disabled={searchPrompt === ''}
+      >
         {isLoading ? 'Searching...' : 'Search'}
       </button>
     </form>
